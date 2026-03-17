@@ -6,16 +6,26 @@ import Footer from './components/Footer';
 import './App.css';
 
 const App: React.FC = () => {
+  const scrollToMain = () => {
+    const mainSection = document.getElementById('main-content');
+    if (mainSection) {
+      mainSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <div className="app-container">
-      <div className="hero-bg">
-        <Hero />
+      <section className="hero-bg" id="hero">
+        <Hero onScrollNext={scrollToMain} />
+      </section>
+
+      <section id="main-content" className="content-section">
         <Navbar />
-      </div>
-      <main className="main-bg">
-        <AboutIntro />
-      </main>
-      <Footer />
+        <main className="main-bg">
+          <AboutIntro />
+        </main>
+        <Footer />
+      </section>
     </div>
   );
 };

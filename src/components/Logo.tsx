@@ -2,10 +2,24 @@ import React from 'react';
 
 interface LogoProps {
   scale?: number;
-  color?: string; // Añadimos color para cambiar entre blanco y negro
+  color?: string;
+  gradient?: boolean;
 }
 
-const Logo: React.FC<LogoProps> = ({ scale = 1, color = '#000000' }) => {
+const Logo: React.FC<LogoProps> = ({ scale = 1, color = '#000000', gradient = false }) => {
+  const gradientStyle = {
+    background: 'linear-gradient(90deg, #CBFF31 0%, #8AD45D 100%)',
+    backgroundClip: 'text' as const,
+    WebkitBackgroundClip: 'text' as const,
+    color: 'transparent',
+    WebkitTextFillColor: 'transparent' as const,
+  };
+
+  const markPartStyle = gradient ? gradientStyle : { color };
+  const textStyle = gradient
+    ? { ...gradientStyle, fontSize: '1.8rem', letterSpacing: '-0.5px' }
+    : { color, fontSize: '1.8rem', letterSpacing: '-0.5px' };
+
   return (
     <div
       className="logo-block"
@@ -13,18 +27,17 @@ const Logo: React.FC<LogoProps> = ({ scale = 1, color = '#000000' }) => {
     >
       <div
         className="logo-mark"
-        style={{ 
-          color,
-          fontFamily: "'TT Interphases Mono Local', monospace", 
-          marginBottom: '-0.5rem' 
+        style={{
+          fontFamily: "'TT Interphases Mono Local', monospace",
+          marginBottom: '-0.5rem'
         }}
       >
-        <span style={{ fontSize: '5.0rem', transform: 'translateX(10px)' }}>/</span>
-        <span style={{ fontSize: '6.5rem', transform: 'translateX(-10px)' }}>&gt;</span>
+        <span style={{ ...markPartStyle, fontSize: '5.0rem', transform: 'translateX(10px)' }}>/</span>
+        <span style={{ ...markPartStyle, fontSize: '6.5rem', transform: 'translateX(-10px)' }}>&gt;</span>
       </div>
       <div
         className="logo-text"
-        style={{ color: color, fontSize: '1.8rem', letterSpacing: '-0.5px' }}
+        style={textStyle}
       >
         quelle.dev
       </div>
