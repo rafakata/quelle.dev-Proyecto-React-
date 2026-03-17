@@ -1,23 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @font-face {
   font-family: 'TT Interphases Mono Local';
-  /* Ruta a tu carpeta de assets dentro de src */
   src: url('./assets/fonts/TT Interphases Pro Mono Trial Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-}
-
-/* Clases utilitarias basadas en tu paleta */
-.bg-quelle-black { background-color: #000000; }
-.bg-quelle-gradient { background: linear-gradient(90deg, #8ad45d, #cbff31); }
-.text-quelle-gradient { 
-  background: linear-gradient(90deg, #8ad45d, #cbff31); 
-  -webkit-background-clip: text; 
-  -webkit-text-fill-color: transparent; 
 }

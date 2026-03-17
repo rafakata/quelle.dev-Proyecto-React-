@@ -3,21 +3,13 @@ import Logo from './Logo';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#0a0a0a] border-t border-gray-800 py-12 px-8 flex flex-col items-center font-poppins">
+    <footer className="footer">
       <Logo scale={0.5} />
-      
-      <div className="flex gap-6 mt-8 mb-6">
-        <a href="https://www.linkedin.com/in/rafael-medina-quelle/" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-[#cbff31] transition-colors">
-          LinkedIn
-        </a>
-        <a href="https://github.com/rafakata" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-[#cbff31] transition-colors">
-          GitHub
-        </a>
+      <div className="footer-links">
+        <a href="https://www.linkedin.com/in/rafael-medina-quelle/" target="_blank" rel="noreferrer" className="footer-link">LinkedIn</a>
+        <a href="https://github.com/rafakata" target="_blank" rel="noreferrer" className="footer-link">GitHub</a>
       </div>
-
-      <p className="text-gray-600 text-xs tracking-widest uppercase font-semibold">
-        Málaga • 2026
-      </p>
+      <p className="footer-text">Málaga • 2026</p>
     </footer>
   );
 };

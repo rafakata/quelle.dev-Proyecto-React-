@@ -1,9 +1,200 @@
-/* Estilos personalizados para vista tipo landing */
-.min-h-[60vh] {
-  min-height: 60vh;
+/* Estructura principal */
+.app-container {
+  min-height: 100vh;
+  font-family: 'Poppins', Arial, sans-serif;
+  background: #bdf445;
+}
+.hero-bg {
+  background: linear-gradient(180deg, #a7ec42 0%, #bdf445 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.main-bg {
+  background: #000;
 }
 
-.flecha-bounce {
+/* Hero */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 26px 24px 40px 24px;
+  text-align: center;
+  position: relative;
+  flex: 1;
+}
+
+.hero-logo-wrap {
+  margin-top: 6px;
+  margin-bottom: 44px;
+}
+
+.hero-title {
+  font-size: clamp(2.2rem, 6.2vw, 4.3rem);
+  font-weight: 500;
+  color: #000;
+  max-width: 1100px;
+  line-height: 1.18;
+  margin-bottom: 2.1rem;
+  letter-spacing: -0.9px;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  background: #b7ef43;
+  color: #000;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+.navbar-links {
+  display: flex;
+  gap: 46px;
+  list-style: none;
+  font-size: 0.95rem;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
+.navbar-link {
+  cursor: pointer;
+  transition: font-weight 0.2s;
+}
+.navbar-link:hover {
+  font-weight: bold;
+}
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.navbar-icon {
+  width: 18px;
+  height: 18px;
+  color: #000;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.navbar-icon:hover {
+  opacity: 0.7;
+}
+
+/* Footer */
+.footer {
+  background: #0a0a0a;
+  border-top: 1px solid #222;
+  padding: 48px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer-links {
+  display: flex;
+  gap: 24px;
+  margin: 32px 0 24px 0;
+}
+.footer-link {
+  color: #bbb;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-link:hover {
+  color: #cbff31;
+}
+.footer-text {
+  color: #666;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+/* AboutIntro */
+.about-intro {
+  background: #000;
+  color: #fff;
+  padding: 70px 32px 84px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.about-title {
+  font-size: clamp(2.1rem, 6vw, 4rem);
+  font-weight: 500;
+  margin-bottom: 1.9rem;
+  color: #efefef;
+}
+.about-desc {
+  max-width: 840px;
+  font-size: clamp(1.2rem, 2.5vw, 2.8rem);
+  color: #ccc;
+  margin-bottom: 1.8rem;
+  line-height: 1.35;
+}
+.about-code {
+  color: #efefef;
+  font-weight: 400;
+  font-size: clamp(1.1rem, 2.6vw, 2.4rem);
+}
+
+.about-green {
+  color: #a6ea42;
+}
+
+.about-caret {
+  display: inline-block;
+  width: 22px;
+  height: 1.05em;
+  background: #f1f1f1;
+  margin-left: 8px;
+  transform: translateY(0.08em);
+}
+
+.logo-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.logo-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-text {
+  font-family: 'Poppins', Arial, sans-serif;
+  font-weight: 400;
+  text-align: center;
+}
+/* Importar fuente Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #bdf445;
+}
+
+#root {
+  margin: 0;
+  width: 100%;
+}
+
+.bounce {
   animation: bounce 1.2s infinite;
 }
 
@@ -11,26 +202,77 @@
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(20px); }
 }
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@font-face {
-  font-family: 'TT Interphases Mono Local';
-  /* Ruta a tu carpeta de assets dentro de src */
-  src: url('./assets/fonts/TT Interphases Pro Mono Trial Bold.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
+.quelle-black {
+  background-color: #000000;
+  color: #fff;
 }
 
-/* Clases utilitarias basadas en tu paleta */
-.bg-quelle-black { background-color: #000000; }
-.bg-quelle-gradient { background: linear-gradient(90deg, #8ad45d, #cbff31); }
-.text-quelle-gradient { 
-  background: linear-gradient(90deg, #8ad45d, #cbff31); 
-  -webkit-background-clip: text; 
-  -webkit-text-fill-color: transparent; 
+.quelle-gradient {
+  background: linear-gradient(90deg, #8ad45d, #cbff31);
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, #8ad45d, #cbff31);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.button-main {
+  background: #000;
+  color: #cbff31;
+  padding: 1rem 2.5rem;
+  border-radius: 2rem;
+  font-weight: 500;
+  font-size: clamp(1.2rem, 2.4vw, 2.1rem);
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.button-main:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 900px) {
+  .navbar-links {
+    display: none;
+  }
+
+  .hero-title {
+    max-width: 700px;
+  }
+
+  .about-desc {
+    max-width: 680px;
+    line-height: 1.45;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-section {
+    padding: 22px 16px 30px;
+  }
+
+  .hero-logo-wrap {
+    margin-bottom: 26px;
+  }
+
+  .button-main {
+    padding: 0.8rem 1.8rem;
+    border-radius: 1.7rem;
+  }
+
+  .navbar {
+    padding: 10px 12px;
+  }
+
+  .about-intro {
+    padding: 52px 18px 64px;
+  }
+
+  .about-caret {
+    width: 14px;
+  }
 }

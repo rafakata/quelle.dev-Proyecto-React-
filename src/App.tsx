@@ -3,26 +3,18 @@ import Hero from './components/Hero';
 import Navbar from './components/Navbar';
 import AboutIntro from './components/AboutIntro';
 import Footer from './components/Footer';
+import './App.css';
 
 const App: React.FC = () => {
   return (
-    <div className="min-h-screen font-poppins selection:bg-[#cbff31] selection:text-black">
-      
-      {/* Contenedor principal Verde */}
-      <div className="bg-[#cbff31] min-h-screen flex flex-col">
+    <div className="app-container">
+      <div className="hero-bg">
         <Hero />
-        {/* El Navbar se queda anclado abajo del hero, separando del negro */}
-        <div className="sticky top-0 z-50 shadow-sm">
-          <Navbar />
-        </div>
+        <Navbar />
       </div>
-
-      {/* Contenedor principal Negro */}
-      <main className="bg-black">
+      <main className="main-bg">
         <AboutIntro />
       </main>
-
-      {/* Footer que ya teníamos adaptado a negro */}
       <Footer />
     </div>
   );
