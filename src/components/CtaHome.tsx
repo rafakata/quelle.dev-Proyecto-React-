@@ -1,7 +1,11 @@
+
+
 import React, { useRef, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 export const CtaHome: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement | null>(null);
+  const navigate = useNavigate();
   useEffect(() => {
     if (!sectionRef.current) return;
     const observer = new window.IntersectionObserver(
@@ -16,13 +20,21 @@ export const CtaHome: React.FC = () => {
     return () => observer.disconnect();
   }, []);
 
+  const handlePortfolioClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    e.preventDefault();
+    navigate('/portfolio');
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'auto' });
+    }, 0);
+  };
+
   return (
     <section className="cta-section" ref={sectionRef}>
       <h2 className="cta-title">¿Listo para dar el salto digital?</h2>
       <p className="cta-desc">
         Descubre cómo hemos ayudado a otros negocios a transformar su presencia online.
       </p>
-      <button className="cta-button">Explorar portfolio</button>
+      <Link to="/portfolio" className="cta-button" onClick={handlePortfolioClick}>Explorar portfolio</Link>
     </section>
   );
 };

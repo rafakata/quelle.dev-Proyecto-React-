@@ -1,9 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
+
 import Footer from './components/Footer';
 import Home from './pages/Home';
-// Importaremos Portfolio y ProjectDetail más adelante
+import Portfolio from './pages/Portfolio';
+import ProjectDetail from './pages/ProjectDetail';
+// Importaremos ProjectDetail más adelante
 import './App.css';
 
 const App: React.FC = () => {
@@ -13,7 +15,8 @@ const App: React.FC = () => {
         {/* Navbar eliminado para que solo aparezca en Home */}
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* Rutas futuras */}
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/trabajos/:id" element={<ProjectDetail />} />
         </Routes>
         <Footer />
       </div>
