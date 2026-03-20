@@ -39,7 +39,8 @@ const AboutIntro: React.FC = () => {
         En <span className="about-green">quelle.dev</span> fusionamos el desarrollo Fullstack con
         estrategia de marketing para convertir tus visitas en clientes.
       </p>
-      <p className="about-code">Código limpio, soluciones reales.</p>
+      {/* Se ha aplicado la clase about-green a 'soluciones reales' */}
+      <p className="about-code">Código limpio, <span className="about-green">soluciones reales.</span></p>
     </section>
   );
 };
