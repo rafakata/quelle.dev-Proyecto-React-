@@ -279,33 +279,41 @@ body {
 }
 
 .footer {
-  background: #060606;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(180deg, var(--q-lime) 0%, var(--q-green) 100%);
+  padding: 0.5rem 1rem 0.25rem 1rem; /* Footer mucho más compacto */
+  min-height: unset; /* Sin altura mínima */
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 2px;
-  padding: 8px 12px;
 }
 
 .footer-links {
-  margin: 1px 0 0;
   display: flex;
-  gap: 8px;
+  gap: 0.25rem;
+  margin-top: 0;
+  margin-bottom: 0.1rem;
 }
 
 .footer-link {
-  color: #b7b7b7;
+  color: #000000; /* Letras en negro */
   text-decoration: none;
-  font-size: 0.8rem;
+  font-weight: 600;
+  transition: opacity 0.3s ease;
+}
+
+.footer-link:hover {
+  opacity: 0.6; /* Un efecto sutil al pasar el ratón */
 }
 
 .footer-text {
-  margin: 1px 0 0;
-  color: #7f7f7f;
-  font-size: 0.72rem;
-  letter-spacing: 1.2px;
+  color: #000000;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: 0.1rem;
+  opacity: 0.7;
 }
 
 .logo-block {
