@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
         <a href="https://github.com/rafakata" target="_blank" rel="noreferrer" className="footer-link" aria-label="GitHub">
           <i className="bi bi-github" style={{ fontSize: '1.3rem' }}></i>
         </a>
-        <a href="https://twitter.com/rafakata" target="_blank" rel="noreferrer" className="footer-link" aria-label="Twitter">
+        <a href="https://x.com/quelledev" target="_blank" rel="noreferrer" className="footer-link" aria-label="Twitter">
           <i className="bi bi-twitter-x" style={{ fontSize: '1.3rem' }}></i>
         </a>
       </div>

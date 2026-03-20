@@ -1,0 +1,12 @@
+[
+  {
+    "id": "the-cinema-vault",
+    "title": "The Cinema Vault",
+    "description": "Aplicación de gestión de películas desarrollada con Node.js, Express y EJS.",
+    "longDescription": "Este proyecto fue un reto técnico donde implementé un sistema de rutas dinámicas y manejo de archivos JSON para mostrar una base de datos de cine...",
+    "image": "/img/proyectos/cinema.jpg",
+    "github": "https://github.com/rafakata/thecinemavault",
+    "deploy": "https://tu-link-de-render-o-vercel.com",
+    "tags": ["Node.js", "Express", "EJS"]
+  }
+]
