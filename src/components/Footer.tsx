@@ -4,7 +4,9 @@ import Logo from './Logo';
 const Footer: React.FC = () => {
   return (
     <footer className="footer">
-      <Logo scale={0.45} color="--q-black" />
+      <div style={{ cursor: 'pointer' }} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} aria-label="Ir al inicio">
+        <Logo scale={0.45} color="--q-black" />
+      </div>
       <div className="footer-links">
         <a href="https://www.linkedin.com/in/rafael-medina-quelle/" target="_blank" rel="noreferrer" className="footer-link" aria-label="LinkedIn">
           <i className="bi bi-linkedin" style={{ fontSize: '1.3rem' }}></i>

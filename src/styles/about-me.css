@@ -1,3 +1,4 @@
+
 .about-me-page {
   padding-top: 120px;
   padding-bottom: 100px;
@@ -50,6 +51,15 @@
   margin-bottom: 1.5rem;
   border-bottom: 2px solid rgba(0, 0, 0, 0.1);
   padding-bottom: 1rem;
+}
+
+.personal-photo {
+  border: 5px solid var(--q-black);
+  border-radius: 50%;
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
 }
 
 .personal-list {

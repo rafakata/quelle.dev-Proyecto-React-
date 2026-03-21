@@ -222,9 +222,9 @@
 }
 
 .service-card:hover {
-  border-color: var(--q-white);
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+  border-color: var(--q-lime);
+  box-shadow: 0 0 16px 2px var(--q-lime), 0 10px 30px rgba(203, 255, 49, 0.18);
+  transform: translateY(-5px) scale(1.03);
 }
 
 .service-icon-wrapper {

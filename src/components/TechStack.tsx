@@ -16,9 +16,16 @@ export const TechStack: React.FC = () => {
     return () => observer.disconnect();
   }, []);
 
-  const technologies = [
-    "React", "TypeScript", "JavaScript", "HTML5", "CSS3", "Git", "Figma", "Node.js", "SQL"
-  ];
+ const technologies = [
+  // Frontend & Diseño
+  "React", "JavaScript", "TypeScript", "HTML5", "CSS3", "Figma","Bootstrap",
+  
+  // Backend & Lógica (Core de DAW)
+  "Node.js", "Express", "Java", "PHP", "Laravel", "XAMPP",
+  
+  // Bases de Datos y Control de Versiones
+  "SQL", "MySQL", "PostgreSQL", "MongoDB", "Git"
+];
 
   return (
     <section className="tech-section" ref={sectionRef}>

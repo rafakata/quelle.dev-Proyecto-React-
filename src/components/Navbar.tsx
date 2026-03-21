@@ -60,10 +60,10 @@ const Navbar: React.FC = () => {
           <Link to="/" className="navbar-link" onClick={handleHomeClick}>Inicio</Link>
         </li>
         <li className="navbar-link">
-          <Link to="/portfolio" className="navbar-link" onClick={handlePortfolioClick}>Nuestros trabajos</Link>
+          <Link to="/portfolio" className="navbar-link" onClick={handlePortfolioClick}>Mis trabajos</Link>
         </li>
         <li className="navbar-link">
-          <Link to="/quienes-somos" className="navbar-link">¿Quiénes somos?</Link>
+          <Link to="/quienes-somos" className="navbar-link">¿Quién soy?</Link>
         </li>
       </ul>
       <div className="navbar-actions">

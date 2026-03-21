@@ -11,7 +11,7 @@ const Portfolio: React.FC = () => {
       <main className="main-bg portfolio-page">
         <section className="portfolio-header">
           <h1 className="portfolio-main-title">
-            Nuestros <span className="highlight-lime">Trabajos</span>
+            Mis <span className="highlight-lime">Trabajos</span>
           </h1>
           <p className="portfolio-subtitle">
             Una selección de proyectos donde el código y la estrategia se dan la mano.
