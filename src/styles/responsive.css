@@ -92,6 +92,14 @@
     display: none;
   }
 
+  .navbar-actions {
+    display: none;
+  }
+
+  .navbar-menu-toggle {
+    display: inline-flex;
+  }
+
   .navbar-contact {
     padding: 8px 16px;
     font-size: 0.98rem;
