@@ -44,7 +44,12 @@ const Navbar: React.FC = () => {
         </li>
       </ul>
       <div className="navbar-actions">
-        <button className="navbar-contact" type="button">Contacto</button>
+        <button className="navbar-contact" type="button" onClick={() => {
+          if (location.pathname !== '/contacto') {
+            navigate('/contacto');
+          }
+          window.scrollTo({ top: 0, behavior: 'auto' });
+        }}>Contacto</button>
       </div>
     </nav>
   );

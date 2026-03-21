@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Portfolio from './pages/Portfolio';
 import ProjectDetail from './pages/ProjectDetail';
 import AboutMe from './pages/AboutMe';
+import Contact from './pages/Contact';
 // Importaremos ProjectDetail más adelante
 import './App.css';
 
@@ -19,6 +20,7 @@ const App: React.FC = () => {
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/trabajos/:id" element={<ProjectDetail />} />
           <Route path="/quienes-somos" element={<AboutMe />} />
+          <Route path="/contacto" element={<Contact />} />
         </Routes>
         <Footer />
       </div>
