@@ -17,8 +17,8 @@
 
 .about-main-title {
   color: var(--q-white);
-  font-size: clamp(3rem, 7vw, 5rem);
-  font-weight: 700;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 400;
   margin: 0;
 }
 

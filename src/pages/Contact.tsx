@@ -77,10 +77,8 @@ const Contact: React.FC = () => {
             </div>
 
             {/* Formulario */}
-            {state.succeeded ? (
-              <p className="contact-success-msg">¡Mensaje enviado! Gracias por contactar.</p>
-            ) : (
-              <form className="contact-form" onSubmit={e => { handleSubmit(e); setFormData({ ...formData, name: '', email: '', subject: '', message: '' }); }}>
+            <div className="contact-form-shell">
+              <form className={`contact-form ${state.succeeded ? 'contact-form--hidden' : ''}`} onSubmit={e => { handleSubmit(e); setFormData({ ...formData, name: '', email: '', subject: '', message: '' }); }}>
                 <div className="form-group">
                   <label htmlFor="name">Nombre</label>
                   <input
@@ -140,7 +138,14 @@ const Contact: React.FC = () => {
                   {state.submitting ? 'Enviando...' : 'Enviar mensaje'}
                 </button>
               </form>
-            )}
+              {state.succeeded && (
+                <div className="contact-success-overlay" role="status" aria-live="polite">
+                  <i className="bi bi-check-circle-fill contact-success-icon" aria-hidden="true"></i>
+                  <p className="contact-success-title">Correo enviado correctamente</p>
+                  <p className="contact-success-text">Gracias por contactar, te responderé pronto.</p>
+                </div>
+              )}
+            </div>
           </div>
 
           <section className="contact-map-section" aria-label="Mapa de Málaga">
