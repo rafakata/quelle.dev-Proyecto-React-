@@ -2,6 +2,10 @@
 
 Este repositorio contiene el código fuente de la plataforma **quelle.dev**, una aplicación web de alto rendimiento orientada a la digitalización de pymes, desarrollada con un enfoque de código limpio y tipado estricto.
 
+## ⛓️ Enlace de despliegue:
+
+https://quelle-dev-proyecto-react.onrender.com
+
 ## 🛠️ Stack Tecnológico Core
 
 - **Framework:** [React 19.2.0](https://react.dev/) para la gestión de la interfaz de usuario.
@@ -66,7 +70,4 @@ Ejecuta ESLint 9 para asegurar la calidad del código y el cumplimiento de regla
 
 Previsualiza localmente el build de producción generado.
 
-<div align="right">
-  <code>quelle.dev /></code>
-</div>
 
