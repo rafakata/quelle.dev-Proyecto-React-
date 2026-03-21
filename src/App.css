@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 :root {
@@ -748,6 +749,170 @@ body {
 .github-outline-button:hover {
   border-color: var(--q-white);
   background: rgba(255,255,255,0.05);
+}
+
+/* --- ESTILOS QUIÉNES SOMOS (ABOUT ME) --- */
+
+.about-me-page {
+  padding-top: 120px;
+  padding-bottom: 100px;
+  min-height: 100vh;
+}
+
+.container-about {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.about-hero {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.about-main-title {
+  color: var(--q-white);
+  font-size: clamp(3rem, 7vw, 5rem);
+  font-weight: 700;
+  margin: 0;
+}
+
+.about-subtitle {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+/* Tarjeta Personal */
+.personal-card {
+  background: linear-gradient(180deg, var(--q-lime) 0%, var(--q-green) 100%);
+  padding: 2.5rem;
+  border-radius: 24px;
+  color: var(--q-black);
+  position: sticky;
+  top: 120px;
+}
+
+.personal-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid rgba(0,0,0,0.1);
+  padding-bottom: 1rem;
+}
+
+.personal-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.personal-list li {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+  line-height: 1.4;
+}
+
+/* Bloques de Historia */
+.story-block {
+  margin-bottom: 3.5rem;
+}
+
+.story-block h3 {
+  color: var(--q-lime);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.story-block p {
+  color: #fff;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  text-align: justify;
+}
+
+.story-block strong {
+  color: var(--q-white);
+}
+
+.highlight-block {
+  background: rgba(85, 113, 3, 0.826);
+  padding: 2rem;
+  border-left: 4px solid var(--q-lime);
+  border-radius: 0 16px 16px 0;
+}
+/* === FOTO DE PERFIL ABOUTME === */
+.personal-photo {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 1.5rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.22);
+  transition: transform 0.22s cubic-bezier(.4,1.3,.6,1), box-shadow 0.22s;
+}
+.personal-photo:hover {
+  transform: scale(1.07) translateY(-4px);
+  box-shadow: 0 16px 48px rgba(203,255,49,0.18), 0 8px 32px rgba(0,0,0,0.22);
+}
+
+.section-divider-title {
+  color: var(--q-white);
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 4.5rem 0 2rem;
+  border-left: 4px solid var(--q-lime);
+  padding-left: 1.2rem;
+}
+
+.experience-item {
+  margin-bottom: 2.2rem;
+}
+
+.experience-item h4 {
+  color: var(--q-lime);
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.desenfadado-text {
+  font-style: italic;
+  color: #ddd !important; /* Un poco más suave para diferenciar el tono */
+  background: rgba(255, 255, 255, 0.03);
+  padding: 1.5rem;
+  border-radius: 12px;
+}
+
+@media (max-width: 700px) {
+  .section-divider-title {
+    font-size: 1.6rem;
+  }
+}
+/* Responsivo */
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .personal-card {
+    position: relative;
+    top: 0;
+    margin-bottom: 3rem;
+  }
+
+  .about-main-title {
+    font-size: 3rem;
+  }
 }
 
 /* Responsivo para la ficha */
