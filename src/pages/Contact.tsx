@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useForm, ValidationError } from '@formspree/react';
 import Navbar from '../components/Navbar';
 import { CircleMarker, MapContainer, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
@@ -8,6 +9,7 @@ const Contact: React.FC = () => {
     window.scrollTo({ top: 0, behavior: 'auto' });
   }, []);
 
+  const [state, handleSubmit] = useForm("xbdzbeqz");
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -20,13 +22,6 @@ const Contact: React.FC = () => {
       ...formData,
       [e.target.name]: e.target.value
     });
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Aquí iría la lógica para enviar el formulario (EmailJS, Formspree, etc.)
-    console.log('Formulario enviado:', formData);
-    alert('Gracias por contactar. Me pondré en contacto contigo pronto.');
   };
 
   return (
@@ -82,62 +77,70 @@ const Contact: React.FC = () => {
             </div>
 
             {/* Formulario */}
-            <form className="contact-form" onSubmit={handleSubmit}>
-              <div className="form-group">
-                <label htmlFor="name">Nombre</label>
-                <input 
-                  type="text" 
-                  id="name" 
-                  name="name" 
-                  value={formData.name} 
-                  onChange={handleChange} 
-                  placeholder="Tu nombre completo"
-                  required 
-                />
-              </div>
+            {state.succeeded ? (
+              <p className="contact-success-msg">¡Mensaje enviado! Gracias por contactar.</p>
+            ) : (
+              <form className="contact-form" onSubmit={e => { handleSubmit(e); setFormData({ ...formData, name: '', email: '', subject: '', message: '' }); }}>
+                <div className="form-group">
+                  <label htmlFor="name">Nombre</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="Tu nombre completo"
+                    required
+                  />
+                  <ValidationError prefix="Nombre" field="name" errors={state.errors} />
+                </div>
 
-              <div className="form-group">
-                <label htmlFor="email">Email</label>
-                <input 
-                  type="email" 
-                  id="email" 
-                  name="email" 
-                  value={formData.email} 
-                  onChange={handleChange} 
-                  placeholder="ejemplo@correo.com"
-                  required 
-                />
-              </div>
+                <div className="form-group">
+                  <label htmlFor="email">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="ejemplo@correo.com"
+                    required
+                  />
+                  <ValidationError prefix="Email" field="email" errors={state.errors} />
+                </div>
 
-              <div className="form-group">
-                <label htmlFor="subject">Asunto</label>
-                <input 
-                  type="text" 
-                  id="subject" 
-                  name="subject" 
-                  value={formData.subject} 
-                  onChange={handleChange} 
-                  placeholder="¿En qué puedo ayudarte?"
-                />
-              </div>
+                <div className="form-group">
+                  <label htmlFor="subject">Asunto</label>
+                  <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    placeholder="¿En qué puedo ayudarte?"
+                  />
+                  <ValidationError prefix="Asunto" field="subject" errors={state.errors} />
+                </div>
 
-              <div className="form-group">
-                <label htmlFor="message">Mensaje</label>
-                <textarea 
-                  id="message" 
-                  name="message" 
-                  rows={5} 
-                  value={formData.message} 
-                  onChange={handleChange} 
-                  placeholder="Cuéntame un poco sobre tu idea..."
-                  required 
-                ></textarea>
-              </div>
+                <div className="form-group">
+                  <label htmlFor="message">Mensaje</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows={5}
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="Cuéntame un poco sobre tu idea..."
+                    required
+                  ></textarea>
+                  <ValidationError prefix="Mensaje" field="message" errors={state.errors} />
+                </div>
 
-              <button type="submit" className="contact-submit-btn">
-                Enviar mensaje
-              </button>
-            </form>
+                <button type="submit" className="contact-submit-btn" disabled={state.submitting}>
+                  {state.submitting ? 'Enviando...' : 'Enviar mensaje'}
+                </button>
+              </form>
+            )}
           </div>
 
           <section className="contact-map-section" aria-label="Mapa de Málaga">

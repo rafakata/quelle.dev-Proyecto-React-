@@ -1,0 +1,113 @@
+.portfolio-page {
+  padding-top: 48px;
+  min-height: 80vh;
+}
+
+.portfolio-header {
+  text-align: center;
+  padding: 2.2rem 2rem 2.5rem 2rem;
+}
+
+.portfolio-main-title {
+  color: var(--q-white);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.portfolio-subtitle {
+  color: #ccc;
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.portfolio-grid-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem 8rem;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2.5rem;
+}
+
+.project-card-link {
+  text-decoration: none;
+}
+
+.project-card {
+  background: linear-gradient(180deg, var(--q-lime) 0%, var(--q-green) 100%);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(203, 255, 49, 0.2);
+}
+
+.project-card-image {
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.project-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card-overlay span {
+  color: var(--q-lime);
+  font-weight: 700;
+  border: 2px solid var(--q-lime);
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  background: rgba(0, 0, 0, 0.7);
+  transition: background 0.2s, color 0.2s, border 0.2s;
+  cursor: pointer;
+}
+
+.project-card-overlay span:hover {
+  background: var(--q-lime);
+  color: #000;
+  border: 2px solid #000;
+}
+
+.project-card:hover .project-card-overlay {
+  opacity: 1;
+}
+
+.project-card-info {
+  padding: 1.5rem;
+  color: var(--q-black);
+}
+
+.project-card-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.project-card-desc {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  opacity: 0.8;
+  margin: 0;
+}
